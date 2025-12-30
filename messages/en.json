@@ -14,6 +14,56 @@
       "reliability": "Reliability",
       "reliabilityDesc": "Trusted by major businesses."
     },
+    "trustedBy": "Trusted by Industry Leaders",
+    "steps": {
+      "title": "Engineered for Speed",
+      "subtitle": "A seamless timeline from pickup to delivery.",
+      "step1": {
+        "title": "Planning",
+        "desc": "Optimal route calculation."
+      },
+      "step2": {
+        "title": "Collection",
+        "desc": "Secure cargo pickup."
+      },
+      "step3": {
+        "title": "Transit",
+        "desc": "Real-time monitoring."
+      },
+      "step4": {
+        "title": "Delivery",
+        "desc": "Instant proof of receipt."
+      }
+    },
+    "bento": {
+      "title": "Why Leading Brands Choose Us",
+      "coverage": {
+        "label": "Network",
+        "title": "58 Wilayas Connected",
+        "desc": "From the port of Djen Djen to Tamanrasset, we are where you need us.",
+        "cta": "Explore Coverage"
+      },
+      "stats": {
+        "onTime": "On-Time Rate",
+        "desc": "Zero delays on scheduled routes."
+      },
+      "tracking": {
+        "title": "Smart Tracking",
+        "desc": "Live GPS updates.",
+        "status": "System Online"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "desc": "Always here to help."
+      }
+    },
+    "testimonials": {
+      "title": "Success Stories",
+      "subtitle": "Trusted by the biggest names in the industry.",
+      "quote": "DjenDjen transformed our supply chain. Their reliability and coverage across 58 wilayas is simply unmatched in the Algerian market.",
+      "author": "Amine B.",
+      "role": "Supply Chain Director"
+    },
     "heroVideo": {
       "title": "No one can teach us our craft.",
       "heroSubtitle": "Experience, mastery, and confidence in freight transportation.",
@@ -104,6 +154,19 @@
         "title": "Efficiency",
         "desc": "Optimizing logistics for speed and cost-effectiveness."
       }
+    },
+    "expertise": {
+      "title": "Expertise & Commitment",
+      "subtitle": "Tailored logistics for large enterprises and merchants.",
+      "items": {
+        "transport": "Goods transportation (all quantities)",
+        "handling": "Loading and unloading at company depots",
+        "pickup": "On-demand pickup service (complementary service)",
+        "recovery": "Cash collection service",
+        "deadlines": "Strict adherence to deadlines",
+        "security": "Security and reliability of goods",
+        "guarantee": "Fast, efficient, and safe service"
+      }
     }
   },
   "Services": {
@@ -155,5 +218,14 @@
         "email": "Email"
       }
     }
+  },
+  "Footer": {
+    "services": {
+      "roadFreight": "Road Freight",
+      "warehousing": "Warehousing",
+      "projectCargo": "Project Cargo",
+      "supplyChain": "Supply Chain"
+    },
+    "copyright": "© {year} DjenDjen Logistics. All rights reserved."
   }
 }

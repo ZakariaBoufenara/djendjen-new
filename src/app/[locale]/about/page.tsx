@@ -1,358 +1,250 @@
+'use client';
+
 import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 import { useTranslations } from 'next-intl';
-import { FadeIn } from '@/components/Animations';
-import { Link } from '@/i18n/routing';
-import { ShieldCheck, HeartHandshake, Gauge, Truck, Warehouse, PackageSearch, Banknote, Clock, ShieldAlert, Zap } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ShieldCheck, HeartHandshake, Gauge, Truck, Warehouse, PackageSearch, Banknote, Clock, ShieldAlert, Zap, Trophy, Globe, Users } from 'lucide-react';
+import Image from 'next/image';
+import { useRef } from 'react';
+
+// Animations
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } as any }
+};
+
+const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
 
 export default function About() {
     const t = useTranslations('About');
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
     return (
-        <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#FFFFFF', overflowX: 'hidden' }}>
             <Navbar />
 
-            {/* Redesigned Hero Header */}
-            {/* Redesigned Hero Header */}
+            {/* Modern Hero Section */}
             <section style={{
                 position: 'relative',
-                paddingTop: 'calc(var(--header-height) + 6rem)', // Increased padding for impact
-                paddingBottom: '6rem',
-                backgroundColor: 'var(--surface)',
+                minHeight: '80vh',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#0f172a',
+                color: 'white',
                 overflow: 'hidden',
-                direction: 'ltr',
-                textAlign: 'left'
+                paddingTop: '4rem'
             }}>
-                {/* Background Image & Overlay */}
+                {/* Background Effects */}
                 <div style={{
-                    position: 'absolute',
-                    top: 0, left: 0, right: 0, bottom: 0,
-                    zIndex: 0
-                }}>
-                    <img
-                        src="/images/about-hero-bg.png"
-                        alt="Logistics Background"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <div style={{
-                        position: 'absolute',
-                        top: 0, left: 0, right: 0, bottom: 0,
-                        backgroundColor: 'rgba(0, 0, 0, 0.65)', // Dark overlay for text readability
-                        backdropFilter: 'blur(2px)'
-                    }} />
-                </div>
+                    position: 'absolute', inset: 0,
+                    backgroundImage: 'radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px)',
+                    backgroundSize: '40px 40px',
+                    opacity: 0.2
+                }} />
+                <div style={{
+                    position: 'absolute', top: '20%', right: '-10%',
+                    width: '600px', height: '600px',
+                    background: 'radial-gradient(circle, var(--accent) 0%, transparent 70%)',
+                    filter: 'blur(80px)', opacity: 0.15
+                }} />
 
-                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <FadeIn>
-                        <span style={{
-                            display: 'inline-block',
-                            color: 'var(--accent)',
-                            fontWeight: 700,
-                            letterSpacing: '0.1em',
-                            textTransform: 'uppercase',
-                            fontSize: '0.875rem',
-                            marginBottom: '1rem'
-                        }}>
-                            {t('subtitle')}
-                        </span>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'end' }}>
-                            <h1 style={{
-                                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '900px' }}>
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={staggerContainer}
+                    >
+                        <motion.h1
+                            variants={fadeInUp}
+                            style={{
+                                fontSize: 'clamp(3rem, 6vw, 5rem)',
                                 fontWeight: 800,
-                                color: 'white',
-                                marginBottom: '1.5rem',
                                 lineHeight: 1.1,
-                                maxWidth: '800px'
-                            }}>
-                                {t('hero.title')}
-                            </h1>
-                            <p style={{
+                                marginBottom: '2rem',
+                                letterSpacing: '-0.02em'
+                            }}
+                        >
+                            {t('title').includes('&') ? (
+                                <>
+                                    <span style={{ color: 'white' }}>{t('title').split('&')[0]}</span>
+                                    <span style={{ color: 'var(--accent)' }}> & </span>
+                                    <span style={{ color: 'white' }}>{t('title').split('&')[1]}</span>
+                                </>
+                            ) : (
+                                <span style={{ color: 'white' }}>{t('title')}</span>
+                            )}
+                        </motion.h1>
+
+                        <motion.p
+                            variants={fadeInUp}
+                            style={{
                                 fontSize: '1.25rem',
-                                lineHeight: 1.7,
-                                color: 'rgba(255, 255, 255, 0.9)',
-                                paddingBottom: '1.5rem',
-                                borderLeft: '3px solid var(--accent)',
-                                paddingLeft: '1.5rem'
-                            }}>
-                                {t('hero.subtitle')}
-                            </p>
-                        </div>
-                    </FadeIn>
+                                color: '#94a3b8',
+                                lineHeight: 1.8,
+                                marginBottom: '3rem'
+                            }}
+                        >
+                            {t('history')}
+                        </motion.p>
+                    </motion.div>
                 </div>
             </section>
 
-            {/* Key Stats Section */}
-            <section style={{ backgroundColor: 'transparent', padding: '4rem 0', color: 'white' }}>
+            {/* Stats Section - Floating */}
+            <div className="container" style={{ marginTop: '-4rem', position: 'relative', zIndex: 20 }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    style={{
+                        background: 'white',
+                        borderRadius: '24px',
+                        padding: '3rem',
+                        boxShadow: '0 20px 40px -5px rgba(0,0,0,0.1)',
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                        gap: '2rem',
+                        textAlign: 'center'
+                    }}
+                >
+                    {[
+                        { val: t('stats.years.value'), label: t('stats.years.label'), icon: Trophy },
+                        { val: t('stats.fleets.value'), label: t('stats.fleets.label'), icon: Truck },
+                        { val: t('stats.clients.value'), label: t('stats.clients.label'), icon: Users },
+                        { val: t('stats.coverage.value'), label: t('stats.coverage.label'), icon: Globe },
+                    ].map((stat, idx) => (
+                        <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div style={{ color: 'var(--accent)', marginBottom: '1rem' }}>
+                                <stat.icon size={32} strokeWidth={1.5} />
+                            </div>
+                            <span style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary-dark)', lineHeight: 1 }}>
+                                {stat.val}
+                            </span>
+                            <span style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '0.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                {stat.label}
+                            </span>
+                        </div>
+                    ))}
+                </motion.div>
+            </div>
+
+            {/* Core Values - Bento Style */}
+            <section className="section" style={{ padding: '8rem 0', backgroundColor: '#F8FAFC' }}>
                 <div className="container">
-                    <FadeIn>
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                            gap: '3rem',
-                            textAlign: 'center'
-                        }}>
-                            {[
-                                { val: t('stats.years.value'), label: t('stats.years.label') },
-                                { val: t('stats.fleets.value'), label: t('stats.fleets.label') },
-                                { val: t('stats.clients.value'), label: t('stats.clients.label') },
-
-                            ].map((stat, idx) => (
-                                <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                    <span style={{
-                                        fontSize: '3.5rem',
-                                        fontWeight: 800,
-                                        lineHeight: 1,
-                                        marginBottom: '0.5rem',
-                                        color: 'var(--primary)'
-                                    }}>
-                                        {stat.val}
-                                    </span>
-                                    <span style={{
-                                        fontSize: '1rem',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '0.05em',
-                                        color: 'var(--text-muted)',
-                                        fontWeight: 600
-                                    }}>
-                                        {stat.label}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
-
-            {/* Content Sections */}
-            <section className="section" style={{ backgroundColor: 'transparent' }}>
-                <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '5rem' }}>
-
-                        {/* LEFT COLUMN: Story & Timeline */}
-                        <div>
-                            <FadeIn delay={0.2}>
-                                <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '2rem', color: 'var(--text-main)' }}>
-                                    Our Journey
-                                </h2>
-                                <div style={{
-                                    fontSize: '1.125rem',
-                                    lineHeight: 1.8,
-                                    color: 'var(--text-muted)',
-                                    marginBottom: '3rem'
-                                }}>
-                                    {t('history')}
-                                </div>
-
-                                {/* Timeline Component */}
-                                <div style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid var(--border)' }}>
-                                    {[
-                                        { year: t('timeline.item1.year'), title: t('timeline.item1.title'), desc: t('timeline.item1.desc') },
-                                        { year: t('timeline.item2.year'), title: t('timeline.item2.title'), desc: t('timeline.item2.desc') },
-                                        { year: t('timeline.item3.year'), title: t('timeline.item3.title'), desc: t('timeline.item3.desc') },
-                                    ].map((item, idx) => (
-                                        <div key={idx} style={{ position: 'relative', marginBottom: '3rem' }}>
-                                            {/* Dot */}
-                                            <div style={{
-                                                position: 'absolute',
-                                                left: '-2.6rem',
-                                                top: '0.25rem',
-                                                width: '1.25rem',
-                                                height: '1.25rem',
-                                                borderRadius: '50%',
-                                                backgroundColor: 'white',
-                                                border: '4px solid var(--primary)'
-                                            }} />
-
-                                            <span style={{
-                                                display: 'block',
-                                                fontSize: '0.875rem',
-                                                fontWeight: 700,
-                                                color: 'var(--accent)',
-                                                marginBottom: '0.25rem'
-                                            }}>
-                                                {item.year}
-                                            </span>
-                                            <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
-                                                {item.title}
-                                            </h4>
-                                            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                                                {item.desc}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </FadeIn>
-                        </div>
-
-                        {/* RIGHT COLUMN: Visuals & Values */}
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-
-                            {/* Integrated Main Image */}
-                            <FadeIn delay={0.3} style={{
-                                position: 'relative',
-                                height: '350px',
-                                borderRadius: 'var(--radius-lg)',
-                                overflow: 'hidden',
-                                boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-                            }}>
-                                <img
-                                    src="/images/hero-bg-final.png"
-                                    alt="Logistics Operations"
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                />
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: 0, left: 0, right: 0,
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-                                    padding: '2rem'
-                                }}>
-                                    <p style={{ color: 'white', fontWeight: 600, fontSize: '1.1rem' }}>
-                                        {t('experience')}
-                                    </p>
-                                </div>
-                            </FadeIn>
-
-                        </div>
+                    <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+                        <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: 'var(--primary-dark)', marginBottom: '1rem' }}>
+                            {t('valuesSection.title')}
+                        </h2>
+                        <p style={{ fontSize: '1.2rem', color: '#64748b' }}>{t('valuesSection.subtitle')}</p>
                     </div>
-                </div>
-            </section>
-
-
-            {/* Expertise & Services Section - NEW */}
-            <section className="section" style={{ backgroundColor: 'white', color: 'var(--text-main)', borderTop: '1px solid var(--border)' }}>
-                <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
-
-                        <FadeIn direction="left">
-                            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1.5rem', color: 'var(--primary)', lineHeight: 1.1 }}>
-                                {t('expertise.title')}
-                            </h2>
-                            <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '500px' }}>
-                                {t('expertise.subtitle')}
-                            </p>
-                        </FadeIn>
-
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }}>
-                            {[
-                                { key: 'transport', icon: <Truck size={24} /> },
-                                { key: 'handling', icon: <Warehouse size={24} /> },
-                                { key: 'pickup', icon: <PackageSearch size={24} /> },
-                                { key: 'recovery', icon: <Banknote size={24} /> },
-                                { key: 'deadlines', icon: <Clock size={24} /> },
-                                { key: 'security', icon: <ShieldAlert size={24} /> },
-                                { key: 'guarantee', icon: <Zap size={24} /> },
-                            ].map((item, idx) => (
-                                <FadeIn key={item.key} direction="right" delay={idx * 0.1}>
-                                    <div style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '1.5rem',
-                                        padding: '1.25rem',
-                                        backgroundColor: 'white',
-                                        borderRadius: 'var(--radius-md)',
-                                        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                                        border: '1px solid var(--border)',
-                                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                                    }}
-                                        className="service-feature-card"
-                                    >
-                                        <div style={{ color: 'var(--primary)', flexShrink: 0 }}>
-                                            {item.icon}
-                                        </div>
-                                        <span style={{ fontWeight: 600, fontSize: '1.1rem' }}>
-                                            {t(`expertise.items.${item.key}`)}
-                                        </span>
-                                    </div>
-                                </FadeIn>
-                            ))}
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* Core Values Section - NEW */}
-            <section className="section" style={{
-                position: 'relative',
-                backgroundColor: 'var(--primary-dark)', // Fallback color
-                borderTop: '1px solid var(--border)',
-                padding: '6rem 0'
-            }}>
-                {/* Background Image & Overlay */}
-                <div style={{
-                    position: 'absolute',
-                    top: 0, left: 0, right: 0, bottom: 0,
-                    zIndex: 0
-                }}>
-                    <img
-                        src="/images/values-bg-stamp.png"
-                        alt="Logistics Background"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <div style={{
-                        position: 'absolute',
-                        top: 0, left: 0, right: 0, bottom: 0,
-                        backgroundColor: 'rgba(0, 51, 160, 0.75)', // Reduced opacity to show stamp details
-                        backdropFilter: 'blur(2px)'
-                    }} />
-                </div>
-
-                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <FadeIn>
-                        <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 4rem auto' }}>
-                            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem', color: 'white' }}>
-                                {t('valuesSection.title')}
-                            </h2>
-                            <p style={{ fontSize: '1.25rem', color: 'rgba(255, 255, 255, 0.9)' }}>
-                                {t('valuesSection.subtitle')}
-                            </p>
-                        </div>
-                    </FadeIn>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                        {['reliability', 'integrity', 'efficiency'].map((val, idx) => (
-                            <FadeIn key={val} delay={idx * 0.1}>
-                                <div style={{
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Glass card
-                                    backdropFilter: 'blur(10px)',
-                                    padding: '2.5rem',
-                                    borderRadius: 'var(--radius-lg)',
-                                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                                    height: '100%',
-                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                                    cursor: 'default',
-                                    textAlign: 'center',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center'
-                                }}
-                                    className="value-card"
-                                >
-                                    {/* Icon - Lucide React */}
-                                    <div style={{
-                                        display: 'inline-flex',
-                                        padding: '1rem',
-                                        borderRadius: '12px',
-                                        backgroundColor: 'rgba(255, 255, 255, 0.2)', // Light white bg for icon
-                                        color: 'white',
-                                        marginBottom: '1.5rem',
-                                    }}>
-                                        {val === 'reliability' && <ShieldCheck size={32} strokeWidth={1.5} />}
-                                        {val === 'integrity' && <HeartHandshake size={32} strokeWidth={1.5} />}
-                                        {val === 'efficiency' && <Gauge size={32} strokeWidth={1.5} />}
-                                    </div>
+                        {['reliability', 'integrity', 'efficiency'].map((val, idx) => {
+                            const icons = { reliability: ShieldCheck, integrity: HeartHandshake, efficiency: Gauge };
+                            const Icon = icons[val as keyof typeof icons];
 
-                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', color: 'white' }}>
+                            return (
+                                <motion.div
+                                    key={val}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    viewport={{ once: true }}
+                                    whileHover={{ y: -5 }}
+                                    style={{
+                                        background: 'white',
+                                        padding: '2.5rem',
+                                        borderRadius: '20px',
+                                        border: '1px solid #e2e8f0',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        textAlign: 'center',
+                                        boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)'
+                                    }}
+                                >
+                                    <div style={{
+                                        width: '64px', height: '64px',
+                                        borderRadius: '16px',
+                                        background: 'var(--surface)',
+                                        color: 'var(--primary)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        marginBottom: '1.5rem'
+                                    }}>
+                                        <Icon size={32} />
+                                    </div>
+                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--primary-dark)' }}>
                                         {t(`valuesSection.${val}.title`)}
                                     </h3>
-                                    <p style={{ color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.6 }}>
+                                    <p style={{ color: '#64748b', lineHeight: 1.6 }}>
                                         {t(`valuesSection.${val}.desc`)}
                                     </p>
-                                </div>
-                            </FadeIn>
-                        ))}
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
+
+            {/* Timeline */}
+            <section style={{ padding: '8rem 0', backgroundColor: 'white' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        <div style={{ position: 'relative', borderLeft: '2px solid #e2e8f0', paddingLeft: '3rem' }}>
+                            {[
+                                { year: t('timeline.item1.year'), title: t('timeline.item1.title'), desc: t('timeline.item1.desc') },
+                                { year: t('timeline.item2.year'), title: t('timeline.item2.title'), desc: t('timeline.item2.desc') },
+                                { year: t('timeline.item3.year'), title: t('timeline.item3.title'), desc: t('timeline.item3.desc') },
+                            ].map((item, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: idx * 0.2 }}
+                                    viewport={{ once: true }}
+                                    style={{ marginBottom: '4rem', position: 'relative' }}
+                                >
+                                    <div style={{
+                                        position: 'absolute', left: '-3.6rem', top: '0',
+                                        width: '1.2rem', height: '1.2rem',
+                                        borderRadius: '50%',
+                                        background: 'white',
+                                        border: '4px solid var(--accent)'
+                                    }} />
+
+                                    <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '0.5rem' }}>
+                                        {item.year}
+                                    </span>
+                                    <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--primary-dark)', marginBottom: '1rem' }}>
+                                        {item.title}
+                                    </h3>
+                                    <p style={{ color: '#64748b', fontSize: '1.1rem', lineHeight: 1.7 }}>
+                                        {item.desc}
+                                    </p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Footer />
         </main>
     );
 }

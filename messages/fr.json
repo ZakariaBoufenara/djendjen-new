@@ -14,6 +14,56 @@
             "reliability": "Fiabilité",
             "reliabilityDesc": "Confiance des grandes entreprises."
         },
+        "trustedBy": "Reconnu par les Leaders de l'Industrie",
+        "steps": {
+            "title": "Conçu pour la Rapidité",
+            "subtitle": "Un processus fluide de la collecte à la livraison.",
+            "step1": {
+                "title": "Planification",
+                "desc": "Calcul optimal de l'itinéraire."
+            },
+            "step2": {
+                "title": "Collecte",
+                "desc": "Ramassage sécurisé de la cargaison."
+            },
+            "step3": {
+                "title": "Transit",
+                "desc": "Suivi en temps réel."
+            },
+            "step4": {
+                "title": "Livraison",
+                "desc": "Preuve de réception instantanée."
+            }
+        },
+        "bento": {
+            "title": "Pourquoi les Grandes Marques Nous Choisissent",
+            "coverage": {
+                "label": "Réseau",
+                "title": "58 Wilayas Connectées",
+                "desc": "Du port de Djen Djen à Tamanrasset, nous sommes là où vous avez besoin de nous.",
+                "cta": "Explorer la Couverture"
+            },
+            "stats": {
+                "onTime": "Taux de Ponctualité",
+                "desc": "Zéro retard sur les itinéraires programmés."
+            },
+            "tracking": {
+                "title": "Suivi Intelligent",
+                "desc": "Mises à jour GPS en direct.",
+                "status": "Système en Ligne"
+            },
+            "support": {
+                "title": "Support 24/7",
+                "desc": "Toujours là pour vous aider."
+            }
+        },
+        "testimonials": {
+            "title": "Histoires de Réussite",
+            "subtitle": "Reconnu par les plus grands noms de l'industrie.",
+            "quote": "DjenDjen a transformé notre chaîne logistique. Leur fiabilité et leur couverture sur les 58 wilayas sont tout simplement inégalées sur le marché algérien.",
+            "author": "Amine B.",
+            "role": "Directeur Supply Chain"
+        },
         "valuesSection": {
             "title": "Nos Valeurs Fondamentales",
             "subtitle": "Guidés par des principes qui assurent votre succès.",
@@ -32,7 +82,7 @@
         },
         "heroVideo": {
             "title": "Personne ne peut nous apprendre notre métier",
-            "subtitle": "Des années d’expérience, une maîtrise totale du transport.",
+            "heroSubtitle": "Des années d’expérience, une maîtrise totale du transport.",
             "ctaPrimary": "Lancez votre demande de devis",
             "ctaSecondary": "Suivre un Envoi"
         },
@@ -184,5 +234,14 @@
                 "email": "Email"
             }
         }
+    },
+    "Footer": {
+        "services": {
+            "roadFreight": "Transport Routier",
+            "warehousing": "Entreposage",
+            "projectCargo": "Cargaison de Projet",
+            "supplyChain": "Chaîne Logistique"
+        },
+        "copyright": "© {year} DjenDjen Logistics. Tous droits réservés."
     }
 }
