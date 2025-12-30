@@ -1,33 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors - Industrial Tech */
+  --primary: #0033A0;
+  /* Deep Cobalt - Professional, Authority */
+  --primary-dark: #002266;
+  --secondary: #0033A0;
+  --accent: #FF6600;
+  /* High-Vis Orange - Logistics Standard */
+
+  /* Neutral Colors - Clean & Sharp */
+  --background: #FFFFFF;
+  --surface: #F4F5F7;
+  /* Cool Grey for technical feel */
+  --surface-hover: #E8EAED;
+  --text-main: #111827;
+  /* Near Black */
+  --text-muted: #6B7280;
+  --border: #D1D5DB;
+  /* Distinct borders */
+
+  /* Status Colors */
+  --success: #10B981;
+  --error: #EF4444;
+
+  /* Radius & Spacing - Sharper, Industrial */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  /* Boxy look */
+  --radius-full: 9999px;
+
+  --container-width: 1400px;
+  /* Wider, modern viewport */
+  --header-height: 5rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0B0F19;
+    /* Technical Dark */
+    --surface: #151B2B;
+    --surface-hover: #1F2937;
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+    --border: #374151;
   }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
+  /* Keep Outfit but style it bolder */
+  background: linear-gradient(135deg, #0B0B0B 0%, #1A1A1A 100%);
+  background-attachment: fixed;
+  /* Ensure gradient stays in place */
+  color: var(--text-main);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* --- ARABIC OVERRIDES --- */
+html[lang="ar"],
+html[lang="ar"] body {
+  font-family: 'Cairo', system-ui, sans-serif !important;
+  font-size: 1.125rem;
+  /* ~18px base size (increased from 16px) */
+  line-height: 1.7;
+  /* Increased line height for better legibility */
+}
+
+/* Boost heading sizes and weights for Arabic */
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: 'Cairo', system-ui, sans-serif !important;
+  line-height: 1.4;
+  font-weight: 800;
+  /* Arabic often needs heaver weights to match Latin optical weight */
+  letter-spacing: normal;
+  /* Arabic doesn't usually look good with tracking */
+}
+
+html[lang="ar"] p {
+  opacity: 0.95;
+  /* Ensure high contrast */
+  font-weight: 500;
+  /* Slightly medium weight for body text */
+}
+
+html[lang="ar"] .btn {
+  font-family: 'Cairo', system-ui, sans-serif !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.9em 2.5rem;
+  /* Slightly taller buttons for taller Arabic glyphs */
 }
 
 a {
@@ -35,8 +115,204 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Utilities - Industrial Grid System */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Buttons - Boxy & High Contrast */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: all 0.2s ease-out;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--text-main);
+  background-color: var(--text-main);
+  color: var(--background);
+}
+
+/* Typography - Bold Headlines */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+/* Cards - Bento Style */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px -10px rgba(0, 51, 160, 0.15);
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+
+
+/* Nav Link Simple Hover */
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+/* Language Switcher Hover Effects */
+.lang-link:hover {
+  color: var(--primary) !important;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Value Card Hover Effect */
+.value-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--primary) !important;
+}
+
+/* Service Page Styles */
+.service-hero {
+  background-image: url("/images/services-hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.service-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 51, 160, 0.6);
+  pointer-events: none;
+}
+
+.service-z-row {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-z-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 900px) {
+  .service-z-row {
+    flex-direction: row;
+    align-items: stretch;
   }
+
+  .service-z-row.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-z-row>div {
+    flex: 1;
+  }
+}
+
+/* Editorial Service Row Hover Effects */
+.service-row:hover .service-icon-bg {
+  transform: translate(10%, -10%) rotate(0deg) scale(1.1) !important;
+  opacity: 0.4 !important;
+}
+
+.service-row:hover .btn-circle {
+  background-color: white;
+  color: var(--primary);
+  border-color: white;
+  transform: translateX(5px);
+}
+
+/* RTL / Arabic Adjustments for Services */
+html[lang="ar"] .service-icon-bg {
+  right: auto !important;
+  left: 0 !important;
+  transform: translate(-20%, -20%) rotate(10deg) !important;
+}
+
+html[lang="ar"] .service-row:hover .service-icon-bg {
+  transform: translate(-10%, -10%) rotate(0deg) scale(1.1) !important;
+}
+
+html[lang="ar"] .service-row:hover .btn-circle {
+  transform: translateX(-5px);
+  /* Move left instead of right */
+}
+
+/* Mirror arrow icon for RTL flow */
+html[lang="ar"] .btn-circle svg {
+  transform: scaleX(-1);
 }

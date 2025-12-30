@@ -1,0 +1,170 @@
+{
+    "HomePage": {
+        "title": "Une Chaîne Logistique Fluide",
+        "subtitle": "Découvrez la nouvelle génération de la gestion logistique.",
+        "heroTitle": "Personne ne peut nous apprendre notre métier.",
+        "heroDescription": "Depuis 2013, nous sommes les experts incontestés du transport de marchandises. Nous gérons de grands volumes avec une maîtrise que seule l'expérience peut offrir.",
+        "cta": "Obtenir un Devis",
+        "services": "Nos Services",
+        "stats": {
+            "experience": "Années d’expérience",
+            "experienceDesc": "Maîtriser le paysage logistique.",
+            "coverage": "Wilayas couvertes",
+            "coverageDesc": "Couverture nationale complète.",
+            "reliability": "Fiabilité",
+            "reliabilityDesc": "Confiance des grandes entreprises."
+        },
+        "valuesSection": {
+            "title": "Nos Valeurs Fondamentales",
+            "subtitle": "Guidés par des principes qui assurent votre succès.",
+            "reliability": {
+                "title": "Fiabilité",
+                "desc": "Tenir nos promesses avec une constance inébranlable."
+            },
+            "integrity": {
+                "title": "Intégrité",
+                "desc": "Bâtir la confiance par des opérations sûres et honnêtes."
+            },
+            "efficiency": {
+                "title": "Efficacité",
+                "desc": "Optimiser la logistique pour la rapidité et la rentabilité."
+            }
+        },
+        "heroVideo": {
+            "title": "Personne ne peut nous apprendre notre métier",
+            "subtitle": "Des années d’expérience, une maîtrise totale du transport.",
+            "ctaPrimary": "Lancez votre demande de devis",
+            "ctaSecondary": "Suivre un Envoi"
+        },
+        "Intro": {
+            "title": "Prêts à tout, jusqu’à destination.",
+            "subtitle": "La logistique qui vous garde toujours en avance."
+        },
+        "ServicesIntro": {
+            "title": "Services et solutions logistiques",
+            "subtitle": "Quels que soient votre secteur d’activité, vos marchandises ou vos marchés clés, DJENDJEN propose des solutions logistiques contribuant au développement de toutes les entreprises, petites ou grandes."
+        }
+    },
+    "Navigation": {
+        "home": "Accueil",
+        "about": "À Propos",
+        "services": "Services",
+        "coverage": "Zones de Couverture",
+        "contact": "Contact"
+    },
+    "About": {
+        "title": "Notre Histoire & Vision",
+        "subtitle": "Partenaire Logistique de Confiance Depuis 2013",
+        "history": "DjenDjen a été créée en 2013 avec une mission unique : fournir le service de transport de marchandises le plus fiable en Algérie. Au cours de la dernière décennie, nous sommes passés d'un transporteur local à une puissance logistique nationale.",
+        "values": "Nos valeurs fondamentales sont la fiabilité, l'intégrité et l'efficacité. Nous croyons en l'établissement de relations à long terme avec nos clients grâce à une performance constante.",
+        "experience": "Avec plus de 10 ans d'excellence opérationnelle, nous avons affronté et surmonté tous les défis logistiques imaginables.",
+        "hero": {
+            "title": "Transport Terrestre de Marchandises Fiable",
+            "subtitle": "Transport de fret rapide, sécurisé et économique à travers les villes et les régions.",
+            "ctaPrimary": "Obtenir un Devis",
+            "ctaSecondary": "Nos Services",
+            "form": {
+                "weight": "Poids de la Cargaison (kg)",
+                "pickup": "Lieu de Ramassage",
+                "dropoff": "Destination de Livraison",
+                "submit": "Calculer le Prix"
+            }
+        },
+        "timeline": {
+            "item1": {
+                "year": "2013",
+                "title": "Fondation",
+                "desc": "Création de DjenDjen avec une vision claire."
+            },
+            "item2": {
+                "year": "2018",
+                "title": "Expansion",
+                "desc": "Agrandissement significatif de la flotte."
+            },
+            "item3": {
+                "year": "2024",
+                "title": "Leader National",
+                "desc": "Reconnu comme partenaire de confiance sur 58 wilayas."
+            }
+        },
+        "stats": {
+            "years": {
+                "value": "12+",
+                "label": "Années d'Expérience"
+            },
+            "fleets": {
+                "value": "100+",
+                "label": "Véhicules"
+            },
+            "clients": {
+                "value": "500+",
+                "label": "Clients Satisfaits"
+            },
+            "coverage": {
+                "value": "58",
+                "label": "Wilayas Couvertes"
+            }
+        },
+        "valuesSection": {
+            "title": "Nos Valeurs Fondamentales",
+            "subtitle": "Guidés par des principes qui assurent votre succès.",
+            "reliability": {
+                "title": "Fiabilité",
+                "desc": "Tenir nos promesses avec une constance inébranlable."
+            },
+            "integrity": {
+                "title": "Intégrité",
+                "desc": "Bâtir la confiance par des opérations sûres et honnêtes."
+            },
+            "efficiency": {
+                "title": "Efficacité",
+                "desc": "Optimiser la logistique pour la rapidité et la rentabilité."
+            }
+        }
+    },
+    "Services": {
+        "title": "Notre Expertise",
+        "subtitle": "Solutions de Transport Complètes",
+        "intro": "Nous proposons une gamme complète de services logistiques et de transport, conçus pour répondre aux exigences rigoureuses de l’industrie moderne.",
+        "viewAll": "Voir tous les services",
+        "learnMore": "En savoir plus",
+        "transport": {
+            "title": "Transport de Marchandises",
+            "desc": "Spécialisé dans le transport de gros volumes sur tous terrains et distances."
+        },
+        "handling": {
+            "title": "Chargement & Déchargement",
+            "desc": "Équipes de manutention professionnelles assurant la sécurité de vos marchandises à chaque étape."
+        },
+        "pickup": {
+            "title": "Collecte & Ramassage",
+            "desc": "Services de collecte flexibles adaptés à votre emploi du temps et à votre emplacement."
+        },
+        "recovery": {
+            "title": "Services de Récupération",
+            "desc": "Récupération d'urgence et soutien logistique spécialisé."
+        }
+    },
+    "Coverage": {
+        "title": "Couverture Nationale",
+        "subtitle": "Desservant 58 Wilayas",
+        "desc": "Nous couvrons la grande majorité du territoire national. Bien que nous visions une couverture à 100%, veuillez nous contacter pour confirmer les localités éloignées spécifiques.",
+        "disclaimer": "* Les détails exacts de la couverture doivent être confirmés avec notre équipe."
+    },
+    "Contact": {
+        "title": "Contactez-nous",
+        "subtitle": "Restons en Contact",
+        "form": {
+            "name": "Nom Complet",
+            "email": "Adresse Email",
+            "phone": "Numéro de Téléphone",
+            "message": "Message",
+            "submit": "Envoyer le Message"
+        },
+        "info": {
+            "address": "Alger, Algérie",
+            "phone": "+213 555 123 456",
+            "email": "contact@djendjen.dz"
+        }
+    }
+}

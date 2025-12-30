@@ -1,0 +1,154 @@
+{
+  "HomePage": {
+    "title": "Seamless Supply Chain",
+    "subtitle": "Experience the next generation of supply chain management.",
+    "heroTitle": "No one can teach us our job.",
+    "heroDescription": "Since 2013, we have been the undisputed experts in goods transportation. We handle large volumes with a level of mastery that only experience can provide.",
+    "cta": "Get a Quote",
+    "services": "Our Services",
+    "stats": {
+      "experience": "Years of Experience",
+      "experienceDesc": "Mastering the logistics landscape.",
+      "coverage": "Wilayas Covered",
+      "coverageDesc": "Comprehensive national coverage.",
+      "reliability": "Reliability",
+      "reliabilityDesc": "Trusted by major businesses."
+    },
+    "heroVideo": {
+      "title": "No one can teach us our craft.",
+      "heroSubtitle": "Experience, mastery, and confidence in freight transportation.",
+      "ctaPrimary": "Get Your Custom Quote",
+      "ctaSecondary": "Track Shipment"
+    },
+    "Intro": {
+      "title": "Ready for anything, until destination.",
+      "subtitle": "Logistics that keeps you always ahead."
+    },
+    "ServicesIntro": {
+      "title": "Logistics Services and Solutions",
+      "subtitle": "Regardless of your industry, cargo, or key markets, DJENDJEN provides logistics solutions that support the growth of businesses of all sizes."
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "coverage": "Coverage Area",
+    "contact": "Contact"
+  },
+  "About": {
+    "title": "Our History & Vision",
+    "subtitle": "Trusted Logistics Partner Since 2013",
+    "history": "DjenDjen was established in 2013 with a single mission: to provide the most reliable goods transportation service in Algeria. Over the last decade, we have grown from a local carrier to a national logistics powerhouse.",
+    "values": "Our core values are reliability, integrity, and efficiency. We believe in building long-term relationships with our clients through consistent performance.",
+    "experience": "With over 10 years of operational excellence, we have faced and overcome every logistical challenge imaginable.",
+    "hero": {
+      "title": "Reliable Land Freight Transportation",
+      "subtitle": "Fast, secure, and cost-effective cargo transport across cities and regions.",
+      "ctaPrimary": "Get a Quote",
+      "ctaSecondary": "Our Services",
+      "form": {
+        "weight": "Cargo Weight (kg)",
+        "pickup": "Pickup Location",
+        "dropoff": "Delivery Destination",
+        "submit": "Calculate Price"
+      }
+    },
+    "timeline": {
+      "item1": {
+        "year": "2013",
+        "title": "Foundation",
+        "desc": "Establishment of DjenDjen with a clear vision."
+      },
+      "item2": {
+        "year": "2018",
+        "title": "Expansion",
+        "desc": "Expanded fleet significantly to cover key regions."
+      },
+      "item3": {
+        "year": "2024",
+        "title": "National Leader",
+        "desc": "Recognized as a trusted partner across 58 wilayas."
+      }
+    },
+    "stats": {
+      "years": {
+        "value": "12+",
+        "label": "Years Experience"
+      },
+      "fleets": {
+        "value": "100+",
+        "label": "Vehicles"
+      },
+      "clients": {
+        "value": "500+",
+        "label": "Happy Clients"
+      },
+      "coverage": {
+        "value": "58",
+        "label": "States Covered"
+      }
+    },
+    "valuesSection": {
+      "title": "Our Core Values",
+      "subtitle": "Driven by principles that ensure your success.",
+      "reliability": {
+        "title": "Reliability",
+        "desc": "Delivering on promises with unwavering consistency."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "desc": "Building trust through safe and honest operations."
+      },
+      "efficiency": {
+        "title": "Efficiency",
+        "desc": "Optimizing logistics for speed and cost-effectiveness."
+      }
+    }
+  },
+  "Services": {
+    "title": "Our Expertise",
+    "subtitle": "Comprehensive Transport Solutions",
+    "intro": "We provide a full spectrum of logistics and transportation services designed to meet the rigorous demands of modern industry.",
+    "viewAll": "View All Services",
+    "learnMore": "Learn More",
+    "transport": {
+      "title": "Goods Transportation",
+      "desc": "Specialized in large volume transport across all terrains and distances."
+    },
+    "handling": {
+      "title": "Loading & Unloading",
+      "desc": "Professional handling teams ensuring your goods are safe at every touchpoint."
+    },
+    "pickup": {
+      "title": "Pickup & Collection",
+      "desc": "Flexible pickup services tailored to your schedule and location."
+    },
+    "recovery": {
+      "title": "Recovery Services",
+      "desc": "Emergency recovery and specialized logistical support."
+    }
+  },
+  "Coverage": {
+    "title": "National Coverage",
+    "subtitle": "Serving 58 Wilayas",
+    "desc": "We cover the vast majority of the national territory. While we aim for 100% coverage, please contact us to confirm specific remote locations.",
+    "disclaimer": "* Exact coverage details should be confirmed with our team."
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in Touch",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "address": "Algiers, Algeria",
+      "phone": "+213 555 123 456",
+      "email": "contact@djendjen.dz"
+    }
+  }
+}
