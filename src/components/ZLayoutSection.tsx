@@ -33,14 +33,15 @@ export function ZLayoutSection() {
                         style={{
                             display: 'grid',
                             gridTemplateColumns: '1fr 1fr',
+                            gap: '4rem',
                             alignItems: 'center',
-                            minHeight: '600px', // Substantial height for cinematic feel
+                            height: '100%',
                             // Radial Gradient with #D48034 (Copper/Orange)
                             // Glassy transparent backgrounds for blocks
                             background: index % 2 === 0
                                 ? 'rgba(255, 255, 255, 0.03)'
                                 : 'rgba(255, 255, 255, 0.08)',
-                            direction: 'ltr' // FORCE LTR LAYOUT
+                            direction: 'ltr'
                         }}
                         className="z-layout-grid"
                     >
@@ -62,16 +63,16 @@ export function ZLayoutSection() {
                             <h2 style={{
                                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                                 fontWeight: 800,
-                                color: '#ffffff',
+                                color: 'var(--text-main)',
                                 marginBottom: '1.5rem',
                                 lineHeight: 1.1,
-                                fontFamily: '"Measter Demo Font", sans-serif'
+                                fontFamily: '"Outfit", sans-serif'
                             }}>
                                 {block.title}
                             </h2>
                             <p style={{
                                 fontSize: '1.25rem',
-                                color: 'rgba(255, 255, 255, 0.9)',
+                                color: 'var(--text-muted)',
                                 lineHeight: 1.6,
                                 maxWidth: '600px'
                             }}>

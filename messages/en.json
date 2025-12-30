@@ -114,19 +114,19 @@
     "learnMore": "Learn More",
     "transport": {
       "title": "Goods Transportation",
-      "desc": "Specialized in large volume transport across all terrains and distances."
+      "desc": "Road transport solutions for all quantities, ensuring secure and timely delivery of your goods across the national territory."
     },
     "handling": {
       "title": "Loading & Unloading",
-      "desc": "Professional handling teams ensuring your goods are safe at every touchpoint."
+      "desc": "Specialized handling operations at our depots, with rigorous monitoring to preserve the integrity of your products."
     },
     "pickup": {
-      "title": "Pickup & Collection",
-      "desc": "Flexible pickup services tailored to your schedule and location."
+      "title": "On-Demand Pickup Service",
+      "desc": "A complementary collection service at the address of your choice, providing maximum logistical flexibility tailored to your specific needs."
     },
     "recovery": {
-      "title": "Recovery Services",
-      "desc": "Emergency recovery and specialized logistical support."
+      "title": "Cash Collection Service",
+      "desc": "Professional and secure management of your funds, ensuring total reliability and fast reconciliation of your transactions."
     }
   },
   "Coverage": {
@@ -146,9 +146,14 @@
       "submit": "Send Message"
     },
     "info": {
-      "address": "Algiers, Algeria",
-      "phone": "+213 555 123 456",
-      "email": "contact@djendjen.dz"
+      "address": "El Hamiz - Dar El Beida – Algiers",
+      "phone": "+213 770 31 04 53",
+      "email": "trans.djendjen@gmail.com",
+      "labels": {
+        "address": "Address",
+        "phone": "Mobile",
+        "email": "Email"
+      }
     }
   }
 }

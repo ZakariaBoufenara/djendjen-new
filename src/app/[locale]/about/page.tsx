@@ -2,7 +2,7 @@ import { Navbar } from '@/components/Navbar';
 import { useTranslations } from 'next-intl';
 import { FadeIn } from '@/components/Animations';
 import { Link } from '@/i18n/routing';
-import { ShieldCheck, HeartHandshake, Gauge } from 'lucide-react';
+import { ShieldCheck, HeartHandshake, Gauge, Truck, Warehouse, PackageSearch, Banknote, Clock, ShieldAlert, Zap } from 'lucide-react';
 
 export default function About() {
     const t = useTranslations('About');
@@ -18,7 +18,9 @@ export default function About() {
                 paddingTop: 'calc(var(--header-height) + 6rem)', // Increased padding for impact
                 paddingBottom: '6rem',
                 backgroundColor: 'var(--surface)',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                direction: 'ltr',
+                textAlign: 'left'
             }}>
                 {/* Background Image & Overlay */}
                 <div style={{
@@ -100,7 +102,7 @@ export default function About() {
                                         fontWeight: 800,
                                         lineHeight: 1,
                                         marginBottom: '0.5rem',
-                                        color: 'white'
+                                        color: 'var(--primary)'
                                     }}>
                                         {stat.val}
                                     </span>
@@ -108,7 +110,8 @@ export default function About() {
                                         fontSize: '1rem',
                                         textTransform: 'uppercase',
                                         letterSpacing: '0.05em',
-                                        opacity: 0.8
+                                        color: 'var(--text-muted)',
+                                        fontWeight: 600
                                     }}>
                                         {stat.label}
                                     </span>
@@ -127,20 +130,20 @@ export default function About() {
                         {/* LEFT COLUMN: Story & Timeline */}
                         <div>
                             <FadeIn delay={0.2}>
-                                <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', color: 'white' }}>
+                                <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '2rem', color: 'var(--text-main)' }}>
                                     Our Journey
                                 </h2>
                                 <div style={{
                                     fontSize: '1.125rem',
                                     lineHeight: 1.8,
-                                    color: 'rgba(255, 255, 255, 0.85)',
+                                    color: 'var(--text-muted)',
                                     marginBottom: '3rem'
                                 }}>
                                     {t('history')}
                                 </div>
 
                                 {/* Timeline Component */}
-                                <div style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid rgba(255, 255, 255, 0.2)' }}>
+                                <div style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '2px solid var(--border)' }}>
                                     {[
                                         { year: t('timeline.item1.year'), title: t('timeline.item1.title'), desc: t('timeline.item1.desc') },
                                         { year: t('timeline.item2.year'), title: t('timeline.item2.title'), desc: t('timeline.item2.desc') },
@@ -156,7 +159,7 @@ export default function About() {
                                                 height: '1.25rem',
                                                 borderRadius: '50%',
                                                 backgroundColor: 'white',
-                                                border: '4px solid rgba(255, 255, 255, 0.2)'
+                                                border: '4px solid var(--primary)'
                                             }} />
 
                                             <span style={{
@@ -168,10 +171,10 @@ export default function About() {
                                             }}>
                                                 {item.year}
                                             </span>
-                                            <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'white', marginBottom: '0.5rem' }}>
+                                            <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
                                                 {item.title}
                                             </h4>
-                                            <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.6 }}>
+                                            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                                                 {item.desc}
                                             </p>
                                         </div>
@@ -209,6 +212,60 @@ export default function About() {
                             </FadeIn>
 
                         </div>
+                    </div>
+                </div>
+            </section>
+
+
+            {/* Expertise & Services Section - NEW */}
+            <section className="section" style={{ backgroundColor: 'white', color: 'var(--text-main)', borderTop: '1px solid var(--border)' }}>
+                <div className="container">
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+
+                        <FadeIn direction="left">
+                            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1.5rem', color: 'var(--primary)', lineHeight: 1.1 }}>
+                                {t('expertise.title')}
+                            </h2>
+                            <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '500px' }}>
+                                {t('expertise.subtitle')}
+                            </p>
+                        </FadeIn>
+
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }}>
+                            {[
+                                { key: 'transport', icon: <Truck size={24} /> },
+                                { key: 'handling', icon: <Warehouse size={24} /> },
+                                { key: 'pickup', icon: <PackageSearch size={24} /> },
+                                { key: 'recovery', icon: <Banknote size={24} /> },
+                                { key: 'deadlines', icon: <Clock size={24} /> },
+                                { key: 'security', icon: <ShieldAlert size={24} /> },
+                                { key: 'guarantee', icon: <Zap size={24} /> },
+                            ].map((item, idx) => (
+                                <FadeIn key={item.key} direction="right" delay={idx * 0.1}>
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '1.5rem',
+                                        padding: '1.25rem',
+                                        backgroundColor: 'white',
+                                        borderRadius: 'var(--radius-md)',
+                                        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                                        border: '1px solid var(--border)',
+                                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                                    }}
+                                        className="service-feature-card"
+                                    >
+                                        <div style={{ color: 'var(--primary)', flexShrink: 0 }}>
+                                            {item.icon}
+                                        </div>
+                                        <span style={{ fontWeight: 600, fontSize: '1.1rem' }}>
+                                            {t(`expertise.items.${item.key}`)}
+                                        </span>
+                                    </div>
+                                </FadeIn>
+                            ))}
+                        </div>
+
                     </div>
                 </div>
             </section>

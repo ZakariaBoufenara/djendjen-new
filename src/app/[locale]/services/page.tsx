@@ -1,16 +1,16 @@
 import { Navbar } from '@/components/Navbar';
 import { useTranslations } from 'next-intl';
 import { FadeIn } from '@/components/Animations';
-import { Truck, Package, MapPin, RefreshCw, ArrowRight } from 'lucide-react';
+import { Truck, Warehouse, PackageSearch, Banknote, ArrowRight } from 'lucide-react';
 
 export default function Services() {
     const t = useTranslations('Services');
 
     const services = [
         { key: 'transport', icon: Truck, color: 'var(--primary)' },
-        { key: 'handling', icon: Package, color: 'var(--accent)' },
-        { key: 'pickup', icon: MapPin, color: '#10B981' }, // Success / Green
-        { key: 'recovery', icon: RefreshCw, color: '#EF4444' } // Error / Red
+        { key: 'handling', icon: Warehouse, color: 'var(--accent)' },
+        { key: 'pickup', icon: PackageSearch, color: '#10B981' },
+        { key: 'recovery', icon: Banknote, color: '#FFD700' }
     ];
 
     return (
@@ -56,12 +56,13 @@ export default function Services() {
                                     style={{
                                         position: 'relative',
                                         padding: '4rem 0',
-                                        borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+                                        borderTop: '1px solid var(--border)',
                                         display: 'grid',
                                         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                                         gap: '2rem',
                                         alignItems: 'start',
-                                        transition: 'all 0.4s ease'
+                                        transition: 'all 0.4s ease',
+                                        direction: 'ltr'
                                     }}
                                 >
                                     {/* Column 1: Number & Title */}
@@ -69,16 +70,16 @@ export default function Services() {
                                         <span style={{
                                             fontSize: '4rem',
                                             fontWeight: 800,
-                                            color: 'rgba(255, 255, 255, 0.15)',
+                                            color: 'rgba(0, 51, 160, 0.08)',
                                             lineHeight: 1,
                                             fontFamily: 'var(--font-outfit)'
                                         }}>
                                             {`0${index + 1}`}
                                         </span>
                                         <h3 style={{
-                                            fontSize: 'clamp(2rem, 3vw, 3rem)',
+                                            fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)',
                                             fontWeight: 800,
-                                            color: 'white',
+                                            color: 'var(--text-main)',
                                             textTransform: 'uppercase',
                                             letterSpacing: '-0.02em',
                                             lineHeight: 1.1,
@@ -101,20 +102,21 @@ export default function Services() {
                                             position: 'absolute',
                                             top: 0,
                                             right: 0,
-                                            opacity: 0.2,
+                                            opacity: 0.1,
                                             transform: 'translate(20%, -20%) rotate(-10deg)',
                                             transition: 'transform 0.5s ease, opacity 0.5s ease'
                                         }} className="service-icon-bg">
-                                            <service.icon size={180} color="white" strokeWidth={0.5} />
+                                            <service.icon size={180} color="var(--primary)" strokeWidth={0.5} />
                                         </div>
 
                                         <p style={{
                                             fontSize: '1.25rem',
-                                            color: 'rgba(255, 255, 255, 0.8)',
-                                            lineHeight: 1.6,
-                                            maxWidth: '500px',
+                                            color: 'var(--text-muted)',
+                                            lineHeight: 1.7,
+                                            maxWidth: '550px',
                                             position: 'relative',
-                                            zIndex: 1
+                                            zIndex: 1,
+                                            fontWeight: 400
                                         }}>
                                             {t(`${service.key}.desc`)}
                                         </p>

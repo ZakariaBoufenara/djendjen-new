@@ -114,11 +114,24 @@
             },
             "integrity": {
                 "title": "Intégrité",
-                "desc": "Bâtir la confiance par des opérations sûres et honnêtes."
+                "desc": "Bâtir la confiance par des opérations sûres et honnêtes."
             },
             "efficiency": {
                 "title": "Efficacité",
                 "desc": "Optimiser la logistique pour la rapidité et la rentabilité."
+            }
+        },
+        "expertise": {
+            "title": "Expertise & Engagement",
+            "subtitle": "Une logistique sur mesure pour les grandes entreprises et les commerçants.",
+            "items": {
+                "transport": "Transport de marchandises (toutes quantités)",
+                "handling": "Chargement et déchargement dans les dépôts de l’entreprise",
+                "pickup": "Service de pickup à la demande du client (service complémentaire)",
+                "recovery": "Service de recouvrement d’argent",
+                "deadlines": "Respect strict des délais",
+                "security": "Sécurité et fiabilité de la marchandise",
+                "guarantee": "Service rapide, efficace et sûr"
             }
         }
     },
@@ -130,19 +143,19 @@
         "learnMore": "En savoir plus",
         "transport": {
             "title": "Transport de Marchandises",
-            "desc": "Spécialisé dans le transport de gros volumes sur tous terrains et distances."
+            "desc": "Solutions de transport routier pour toutes quantités, garantissant une acheminement sécurisé et ponctuel de vos marchandises sur l'ensemble du territoire."
         },
         "handling": {
             "title": "Chargement & Déchargement",
-            "desc": "Équipes de manutention professionnelles assurant la sécurité de vos marchandises à chaque étape."
+            "desc": "Opérations de manutention spécialisées au sein de nos dépôts, avec un suivi rigoureux pour préserver l'intégrité de vos produits."
         },
         "pickup": {
-            "title": "Collecte & Ramassage",
-            "desc": "Services de collecte flexibles adaptés à votre emploi du temps et à votre emplacement."
+            "title": "Service de Pickup à la Demande",
+            "desc": "Service complémentaire de collecte à l'adresse de votre choix, offrant une flexibilité logistique maximale adaptée à vos besoins spécifiques."
         },
         "recovery": {
-            "title": "Services de Récupération",
-            "desc": "Récupération d'urgence et soutien logistique spécialisé."
+            "title": "Service de Recouvrement d'Argent",
+            "desc": "Gestion professionnelle et sécurisée du recouvrement de vos fonds, assurant une fiabilité totale et une réconciliation rapide de vos transactions."
         }
     },
     "Coverage": {
@@ -162,9 +175,14 @@
             "submit": "Envoyer le Message"
         },
         "info": {
-            "address": "Alger, Algérie",
-            "phone": "+213 555 123 456",
-            "email": "contact@djendjen.dz"
+            "address": "El Hamiz - Dar El Beida – Alger",
+            "phone": "+213 770 31 04 53",
+            "email": "trans.djendjen@gmail.com",
+            "labels": {
+                "address": "Adresse",
+                "phone": "Mobile",
+                "email": "Email"
+            }
         }
     }
 }

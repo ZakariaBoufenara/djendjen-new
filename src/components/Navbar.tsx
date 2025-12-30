@@ -26,7 +26,7 @@ export function Navbar() {
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
             backdropFilter: 'blur(12px)',
             borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
-            direction: 'ltr' // FORCE LTR LAYOUT CONSISTENCY
+            direction: 'ltr'
         }}>
             <div className="container" style={{ height: 'var(--header-height)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <Link href="/" style={{
@@ -37,9 +37,9 @@ export function Navbar() {
                     padding: '0.5rem 1rem',
                     borderRadius: '6px'
                 }}>
-                    <div style={{ position: 'relative', height: '50px', width: '160px' }}>
+                    <div style={{ position: 'relative', height: '65px', width: '180px' }}>
                         <Image
-                            src="/images/logo-new.png"
+                            src="/images/logo-official.png"
                             alt="DjenDjen Logistics"
                             fill
                             style={{ objectFit: 'contain', objectPosition: 'center' }}

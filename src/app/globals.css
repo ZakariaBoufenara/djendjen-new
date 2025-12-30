@@ -2,34 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  /* Brand Colors - Industrial Tech */
-  --primary: #0033A0;
-  /* Deep Cobalt - Professional, Authority */
-  --primary-dark: #002266;
-  --secondary: #0033A0;
-  --accent: #FF6600;
-  /* High-Vis Orange - Logistics Standard */
+  /* Brand Colors - Standardized */
+  --primary: #1F4E79;
+  /* Deep Blue Titles */
+  --primary-dark: #153554;
+  --secondary: #1F4E79;
+  --accent: #F59E0B;
+  /* Amber CTA */
 
-  /* Neutral Colors - Clean & Sharp */
+  /* Neutral Colors - Professional Contrast */
   --background: #FFFFFF;
-  --surface: #F4F5F7;
-  /* Cool Grey for technical feel */
-  --surface-hover: #E8EAED;
-  --text-main: #111827;
-  /* Near Black */
-  --text-muted: #6B7280;
-  --border: #D1D5DB;
-  /* Distinct borders */
+  --surface: #F9FBFC;
+  --surface-hover: #F1F5F9;
+  --text-main: #2E2E2E;
+  /* Dark Grey Body Text */
+  --text-heading: #1F4E79;
+  /* Match Primary for Headings */
+  --text-muted: #525252;
+  /* Accessible Muted Text */
+  --border: #EAF1F8;
+  /* Light Blue Separators */
 
   /* Status Colors */
-  --success: #10B981;
-  --error: #EF4444;
+  --success: #059669;
+  --error: #DC2626;
 
   /* Radius & Spacing - Sharper, Industrial */
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  /* Boxy look */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  /* Balanced look */
   --radius-full: 9999px;
 
   --container-width: 1400px;
@@ -37,15 +39,11 @@
   --header-height: 5rem;
 }
 
+/* Remove Dark Mode Text Overrides as Background is Fixed Light */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0B0F19;
-    /* Technical Dark */
-    --surface: #151B2B;
-    --surface-hover: #1F2937;
-    --text-main: #F9FAFB;
-    --text-muted: #9CA3AF;
-    --border: #374151;
+    --surface: #F9FAFB;
+    --border: #E5E7EB;
   }
 }
 
@@ -61,7 +59,7 @@ body {
   overflow-x: hidden;
   font-family: 'Outfit', system-ui, sans-serif;
   /* Keep Outfit but style it bolder */
-  background: linear-gradient(135deg, #0B0B0B 0%, #1A1A1A 100%);
+  background: linear-gradient(to top, #FFFFFF 0%, #EAF1F8 100%);
   background-attachment: fixed;
   /* Ensure gradient stays in place */
   color: var(--text-main);
@@ -93,6 +91,12 @@ html[lang="ar"] h6 {
   /* Arabic often needs heaver weights to match Latin optical weight */
   letter-spacing: normal;
   /* Arabic doesn't usually look good with tracking */
+  text-align: right;
+  direction: rtl;
+}
+
+html[lang="ar"] * {
+  unicode-bidi: plaintext;
 }
 
 html[lang="ar"] p {
@@ -100,6 +104,8 @@ html[lang="ar"] p {
   /* Ensure high contrast */
   font-weight: 500;
   /* Slightly medium weight for body text */
+  text-align: right;
+  direction: rtl;
 }
 
 html[lang="ar"] .btn {
@@ -312,7 +318,31 @@ html[lang="ar"] .service-row:hover .btn-circle {
   /* Move left instead of right */
 }
 
-/* Mirror arrow icon for RTL flow */
-html[lang="ar"] .btn-circle svg {
-  transform: scaleX(-1);
+/* Coverage Page Styles */
+.coverage-hero {
+  background-image: url("/images/coverage-bg-new.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  margin-top: calc(-1 * var(--header-height));
+  /* Extend behind navbar */
+  padding-top: var(--header-height);
+}
+
+
+.service-feature-card:hover {
+  transform: translateX(10px);
+  border-color: var(--primary) !important;
+  box-shadow: 0 10px 20px rgba(0, 51, 160, 0.1) !important;
+}
+
+/* RTL Adjustment for feature card hover */
+html[lang="ar"] .service-feature-card:hover {
+  transform: translateX(-10px);
 }

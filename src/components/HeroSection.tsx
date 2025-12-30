@@ -69,7 +69,7 @@ export function HeroSection({ ctaText, servicesText }: HeroProps) {
                     gap: '4rem',
                     alignItems: 'center',
                     height: '100%',
-                    direction: 'ltr' // FORCE LTR LAYOUT
+                    direction: 'ltr'
                 }}>
 
                     {/* Left Side: Content Overlay - LOCKED LEFT */}
@@ -90,11 +90,10 @@ export function HeroSection({ ctaText, servicesText }: HeroProps) {
 
                                 width: '100%',
                                 maxWidth: '650px',
-                                textAlign: 'left', // Align text to LEFT
+                                textAlign: 'left',
                                 display: 'flex',
                                 flexDirection: 'column',
-                                alignItems: 'flex-start', // Align items to START
-                                // Ensure strict LTR positioning
+                                alignItems: 'flex-start',
                                 direction: 'ltr'
                             }}
                         >
@@ -149,11 +148,11 @@ export function HeroSection({ ctaText, servicesText }: HeroProps) {
                                     color: 'var(--accent)',
                                     lineHeight: 1.2,
                                     marginBottom: '2rem',
-                                    direction: 'rtl',
                                     fontFamily: 'Tahoma, Arial, sans-serif',
                                     textShadow: '0 2px 10px rgba(0,0,0,0.3)',
-                                    width: '100%', // Ensure RTL text takes full width but aligns as per container
-                                    textAlign: 'right', // Arabic looks better right-aligned internally, or keep it left? 
+                                    width: '100%',
+                                    direction: 'rtl',
+                                    textAlign: 'right',
                                     cursor: 'default'
                                 }}>
                                 لا أحد يعلّمنا مهنتنا
